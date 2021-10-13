@@ -1,0 +1,64 @@
+PASM16
+
+REG 16BIT
+===
+
+general - ax, bx
+call - sp, jp
+
+ax - general purpose
+bx - general purpose
+sp - stack pointer
+jp - jump pointer
+
+
+STACK
+===
+[0 ... 32768]
+
+Sys - [0, 64]
+Free - []
+
+
+OPCODES
+===
+
+0000 - sys
+===
+
+1000 - load
+===
+
+1 - addr
+2 - load
+
+1001 - set
+===
+
+1 - addr
+2 - set
+
+1100 - addl
+===
+
+1 - addend, sum
+2 - addend
+
+1101 - subl
+===
+
+1 - minuend, difference
+2 - subtrahend
+
+1110 - mutl
+===
+
+1 - multicand, product
+2 - multiplier
+
+1111 - divl
+===
+
+Rounded
+1 - dividend, quotient
+2 - divisor
