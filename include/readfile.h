@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-int* freadf(char* path);
+int freadf(char* path, int* buffer, size_t* size);
 
 #endif
