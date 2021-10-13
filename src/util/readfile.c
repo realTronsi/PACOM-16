@@ -1,7 +1,4 @@
-#include "./readfile.h"
-
-#define true 1
-#define false 0
+#include "../../include/readfile.h"
 
 int freadf(char* path, int* buffer, size_t* size){
 	FILE* file = fopen(path, "rb");
@@ -15,7 +12,7 @@ int freadf(char* path, int* buffer, size_t* size){
 	size = ftell(file);
 	fseek(file, 0, SEEK_SET);
 
-	int* data = calloc(size, int);
+	int* data = calloc(size, sizeof(int));
 	data = file;
 	
 	buffer = data;
