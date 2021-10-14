@@ -11,4 +11,6 @@ enum {
 	DIVL
 } Tokens;
 
+int pasm_lexer(int* code, int* buffer);
+
 #endif

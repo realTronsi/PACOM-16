@@ -1,6 +1,6 @@
 #include "../../../include/readfile.h"
 
-int main(int argc, char* argv){
+int main(int argc, char** argv){
 	int* code;
 	size_t* length;
 
