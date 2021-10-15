@@ -22,11 +22,11 @@ int lex_number(int* code, ul* ptr){
 }
 
 // tokenize strings
-int lex_string(int* code, ul* ptr){
+int lex_string(int* code, ul ptr){
 
 }
 
-int pasm_lexer(int* code, int* buffer){
+int pasm_lex(int* code, int* buffer){
 	if(code == NULL){
 		return 0;
 	}
@@ -44,10 +44,21 @@ int pasm_lexer(int* code, int* buffer){
 				// overflow
 				return 0;
 			}
+
+			// check for special char
+			switch(code[ptr]){
+				case '"': {
+					break;
+				}
+				default: break;
+			}
+
 			curr[curr_len] = code[ptr];
 			curr_len++;
 		} else {
 			// whitespace, push token
 		}
 	}
+
+	free(curr);
 }
