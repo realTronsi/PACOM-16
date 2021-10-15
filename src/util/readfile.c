@@ -4,18 +4,16 @@ int freadf(char* path, int* buffer, size_t* size){
 	FILE* file = fopen(path, "rb");
 
 	if(file == NULL){
-		return false;
+		return 0;
 	}
 
 	// file size
 	fseek(file, 0, SEEK_END);
-	size = ftell(file);
+	size_t file_size = ftell(file);
 	fseek(file, 0, SEEK_SET);
 
-	int* data = calloc(size, sizeof(int));
-	data = file;
-	
-	buffer = data;
+	buffer = calloc(file_size, sizeof(int));
+	buffer = file;
 
-	return true;
+	return 1;
 }
