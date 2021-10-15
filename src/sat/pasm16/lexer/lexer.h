@@ -2,6 +2,7 @@
 #define LEXER_H
 
 #include <stdlib.h>
+#include "../../../../include/CONST.h"
 
 enum {
 	SYS,
