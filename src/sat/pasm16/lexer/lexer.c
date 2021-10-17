@@ -22,8 +22,21 @@ int lex_number(int* code, ul* ptr){
 }
 
 // tokenize strings
-int lex_string(int* code, ul ptr){
-
+int lex_string(int* code, ul ptr, char* buffer){
+	char* str = NULL;
+	// get string length
+	size_t str_len = 0;
+	while(code[ptr] != '"' || code[ptr] != '\0'){
+		str_len++;
+	}
+	str = calloc(str_len, sizeof(*str));
+	for(int i = 0; i < str_len; i++){
+		ptr++;
+		str[i] = code[ptr];
+	}
+	// end string
+	buffer = str;
+	return 1;
 }
 
 int pasm_lex(int* code, int* buffer){
@@ -46,11 +59,13 @@ int pasm_lex(int* code, int* buffer){
 			}
 
 			// check for special char
-			switch(code[ptr]){
-				case '"': {
-					break;
+			if(curr_len == 0){
+				switch(code[ptr]){
+					case '"': {
+						break;
+					}
+					default: break;
 				}
-				default: break;
 			}
 
 			curr[curr_len] = code[ptr];
