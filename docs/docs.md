@@ -20,8 +20,8 @@ You may install PACOM-16 via our [CLI installer](#CLII) or [Visual Studio Code](
 
 See their differences below:
 
-| | Install Time | User Friendly| Customization | Auto Install |
-|: - :|: - :|: - :|:-:|:-:|
+| ~ | Install Time | User Friendly| Customization | Auto Install |
+|: - :|: - :|: - :|: - :|: - :|
 | CLI | Fast | ✓ | X | ✓ |
 | Visual Studio| Medium | ✓ | ✓ | X |
 
