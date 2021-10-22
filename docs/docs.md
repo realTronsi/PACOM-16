@@ -22,7 +22,7 @@ See their differences below:
 
 | | Install Time | User Friendly | Customization | Auto Install |
 |: - :|: - :|: - :|: - :|: - :|
-| CLI | Fast | ✓ | X | ✓ |
+| CLI Installer | Fast | ✓ | X | ✓ |
 | Visual Studio| Medium | ✓ | ✓ | X |
 
 ### Dependencies

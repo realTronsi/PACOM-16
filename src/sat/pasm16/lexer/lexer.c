@@ -18,7 +18,30 @@ int is_whitespace(char c){
 
 // tokenize numbers
 int lex_number(int* code, ul* ptr){
+	// get number size
+	size_t digits = 0;
+	while((code[ptr] >= '0' || code[ptr] <= '9') || code[ptr] == 'b'){
+		if(code[ptr] >= '0' || code[ptr] <= '9'){
+			digits++;
+		}
+		ptr++;
+	}
 
+	// reset pointer
+	ptr -= digits;
+
+	int number = 0;
+	int base = 10;
+	for(int i = digits; i > 0; i--;){
+		if(code[ptr] >= '0' || code[ptr] <= '9'){
+			number += code[ptr] * i * base;
+		} else if(code[ptr] == 'b') {
+			base = 2;
+		}
+		ptr++;
+	}
+
+	return number;
 }
 
 // tokenize strings
