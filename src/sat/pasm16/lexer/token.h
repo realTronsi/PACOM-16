@@ -3,6 +3,8 @@
 
 typedef struct {
 	enum {
+		NUMBER,
+		STRING,
 		SYS,
 		LOAD,
 		SET,
@@ -14,5 +16,7 @@ typedef struct {
 	// any extra metadata to be stored
 	int* value;
 } Token;
+
+Token* new_token()
 
 #endif

@@ -17,7 +17,7 @@ int is_whitespace(char c){
 }
 
 // tokenize numbers
-int lex_number(int* code, ul* ptr){
+int lex_number(int* code, ul* ptr, int ret){
 	// get number size
 	size_t digits = 0;
 	while((code[ptr] >= '0' || code[ptr] <= '9') || code[ptr] == 'b'){
@@ -41,11 +41,12 @@ int lex_number(int* code, ul* ptr){
 		ptr++;
 	}
 
-	return number;
+	Token* token = new_token(NUMBER);
+	return ;
 }
 
 // tokenize strings
-int lex_string(int* code, ul ptr, char* buffer){
+int lex_string(int* code, ul ptr, int ret){
 	char* str = NULL;
 	// get string length
 	size_t str_len = 0;
@@ -83,11 +84,11 @@ int pasm_lex(int* code, int* buffer){
 
 			// check for special char
 			if(curr_len == 0){
-				switch(code[ptr]){
-					case '"': {
-						break;
-					}
-					default: break;
+				if(code[ptr] >= '0' || code[ptr] <= '9'){
+					lex_number(code, ptr, ret);
+				} else if (code[ptr] == '"'){
+					lex_string(code, ptr, ret);
+					break;
 				}
 			}
 
