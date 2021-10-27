@@ -5,6 +5,6 @@
 #include "../../../../include/CONST.h"
 #include "./token.h"
 
-int pasm_lexer(int* code, int* buffer);
+Token* pasm_lex(int* code, int errno);
 
 #endif

@@ -17,6 +17,6 @@ typedef struct {
 	int* value;
 } Token;
 
-Token* new_token()
+Token* new_token();
 
 #endif
