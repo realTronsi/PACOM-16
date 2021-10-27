@@ -3,7 +3,7 @@
 #define ul unsigned long
 
 // grab previous token
-int backstep(int* code, ul ptr){
+int backstep(const int* code, ul ptr){
 
 }
 
@@ -17,7 +17,7 @@ int is_whitespace(char c){
 }
 
 // tokenize numbers
-int lex_number(int* code, ul* ptr, int errno){
+int lex_number(const int* code, ul* ptr, int errno){
 	// get number size
 	size_t digits = 0;
 	while((code[ptr] >= '0' || code[ptr] <= '9') || code[ptr] == 'b'){
@@ -46,7 +46,7 @@ int lex_number(int* code, ul* ptr, int errno){
 }
 
 // tokenize strings
-int lex_string(int* code, ul ptr, int errno){
+int lex_string(const int* code, ul ptr, int errno){
 	char* str = NULL;
 	// get string length
 	size_t str_len = 0;
@@ -63,7 +63,7 @@ int lex_string(int* code, ul ptr, int errno){
 	return 1;
 }
 
-Token* pasm_lex(int* code, int errno){
+Token* pasm_lex(const int* code, int errno){
 	if(code == NULL){
 		return 0;
 	}
@@ -99,6 +99,9 @@ Token* pasm_lex(int* code, int errno){
 			curr_len++;
 		} else {
 			// whitespace, push token
+			switch(curr){
+				case (strcmp())
+			}
 		}
 	}
 
