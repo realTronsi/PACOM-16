@@ -1,7 +1,7 @@
 #ifndef STRING_H
 #define STRING_H
 
-#define unsigned char uchar
+#include "CONST.h"
 
 int strcmp(const char* str1, const char* str2);
 

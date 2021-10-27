@@ -7,9 +7,6 @@ int main(int argc, char** argv){
 
 	if(argc > 0){
 		if(freadf(argv[0], &code, length) == 1){
-			// setup stack
-			short stack[32768];
-
 			// lexer
 			int tokenized = 0;
 			pasm_lex(code, &tokenized);
