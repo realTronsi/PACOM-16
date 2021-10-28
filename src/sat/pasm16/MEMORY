@@ -1,0 +1,8 @@
+Memory Layout
+==
+
+[0x0, 0x10] - Register
+[0x10, 0x210] - Bootloader 512 bytes
+[ ~ ] - kernel
+[0x210, ] - stack
+[, 0x7FF] - heap

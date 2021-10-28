@@ -12,6 +12,6 @@ typedef struct {
 } Memory;
 
 // generic barebones malloc implementation
-int malloc(Memory* stack, ushort len);
+int malloc(Memory* memory, ushort len);
 
 #endif

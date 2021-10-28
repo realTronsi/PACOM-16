@@ -1,5 +1,5 @@
 #include "memory.h"
 
-int malloc(Memory* stack, ushort len){
+int malloc(Memory* memory, ushort len){
 	
 }
